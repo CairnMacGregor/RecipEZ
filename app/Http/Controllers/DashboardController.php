@@ -27,8 +27,8 @@ class DashboardController extends Controller
         // $testData = Recipe::latest()->with(['favourites'])->paginate(20);
         // $extraInfo = Auth::user()->favourites[0]->recipe_id;
         $extraInfo = Auth::user()->favourites->count();
-
-
+        // $arrayIn = Recipe::find(Auth::user()->favourites[1]->recipe_id)->with(['user', 'likes']);
+        // dd($arrayIn);
         for ($i = 0; $i < $extraInfo; $i++) {
             $arrayIn = Recipe::find(Auth::user()->favourites[$i]->recipe_id);
             $outPut[] = $arrayIn;
