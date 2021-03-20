@@ -3,10 +3,10 @@
 @section('content')
     <div>
         <div>
-            
             <a href ="{{route('recipes.create')}}">Add a new recipe</a>
-
+           
             @if($recipes -> count())
+            
             @foreach($recipes as $recipe)
             <div style ="border: 2px solid red;">
                 <a href="{{ route('users.recipes', $recipe ->user)}}">{{$recipe -> user -> name}}</a><span> {{$recipe -> created_at -> diffForHumans()}}</span>

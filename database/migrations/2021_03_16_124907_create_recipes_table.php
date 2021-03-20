@@ -17,6 +17,7 @@ class CreateRecipesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->mediumText('title');
+            $table->string('file_path')->nullable();
             $table->integer('prep_time');
             $table->integer('cook_time');
             $table->text('body');

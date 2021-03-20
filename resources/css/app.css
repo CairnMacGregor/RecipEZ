@@ -79,7 +79,7 @@ img {
     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 2rem;
 }
 @media only screen and (max-width: 420px) {
     .foodCardGrid {
@@ -95,27 +95,62 @@ img {
     align-items: center;
     border-radius: 10px;
     height: 500px;
-    background: #212121;
     color: #ffe598;
-    transition: 0.25s;
+    position: relative;
+    transition: 0.5s;
+    background: black;
 }
 
 .foodCard:hover {
     transition: 0.25s;
     transform: scale(1.04);
+    cursor: pointer;
 }
-
+.foodTitle {
+    font-size: 1.6rem;
+}
 .foodCardItem {
     margin: 1rem;
+    z-index: 4;
 }
 
+.food_card_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imageOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(0deg, #000000a6 30%, #96969644 100%);
+}
 #dashboard {
     padding-top: 2rem;
     min-height: 100vh;
     min-width: 100%;
     background: #383838;
 }
+/* UTILS */
+.noOutput {
+    padding-left: 2rem;
+    color: #ffe598;
+}
 
+.noOutput a {
+    font-size: 2rem;
+    color: #ffe598;
+    font-weight: 500;
+}
 /* Footer */
 
 .footer-container {

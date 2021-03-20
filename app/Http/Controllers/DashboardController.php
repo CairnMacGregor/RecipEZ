@@ -23,23 +23,20 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        // $userFavs = Auth::user()->id;
-        // $testData = Recipe::latest()->with(['favourites'])->paginate(20);
-        // $extraInfo = Auth::user()->favourites[0]->recipe_id;
         $extraInfo = Auth::user()->favourites->count();
-        // $arrayIn = Recipe::find(Auth::user()->favourites[1]->recipe_id)->with(['user', 'likes']);
-        // dd($arrayIn);
-        for ($i = 0; $i < $extraInfo; $i++) {
-            $arrayIn = Recipe::find(Auth::user()->favourites[$i]->recipe_id);
-            $outPut[] = $arrayIn;
-        }
+        if ($extraInfo > 0) {
+            for ($i = 0; $i < $extraInfo; $i++) {
+                $arrayIn = Recipe::find(Auth::user()->favourites[$i]->recipe_id);
+                $outPut[] = $arrayIn;
+            }
+            return view('dashboard', [
+                'userFavs' => $outPut,
 
-        // dd($testData, $userFavs, $extraInfo);
-        // dd($userFavs);
-        // $favourites = Favourite::latest();
-        return view('dashboard', [
-            'userFavs' => $outPut,
-            // 'favourites' => $favourites
-        ]);
+            ]);
+        } else {
+            return view('dashboard', [
+                'userFavs' => 0,
+            ]);
+        }
     }
 }
