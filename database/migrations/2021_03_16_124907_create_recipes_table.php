@@ -22,6 +22,8 @@ class CreateRecipesTable extends Migration
             $table->integer('cook_time');
             $table->text('body');
             $table->timestamps();
+            $table->longText('ingredients');
+            $table->longText('steps');
         });
     }
 

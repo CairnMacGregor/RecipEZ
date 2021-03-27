@@ -16,9 +16,14 @@ class Recipe extends Model
         'file_path',
         'prep_time',
         'cook_time',
-        'body'
+        'body',
+        'ingredients',
+        'steps'
     ];
-
+    // protected $casts = [
+    //     'ingredients' => 'array',
+    //     'steps' => 'array'
+    // ];
     public function likedBy(User $user)
     {
         return $this->likes->contains('user_id', $user->id);

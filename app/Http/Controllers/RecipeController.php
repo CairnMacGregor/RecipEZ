@@ -33,7 +33,8 @@ class RecipeController extends Controller
             'prep_time' => 'required',
             'cook_time' => 'required',
             'body' => 'required',
-
+            'ingredients' => 'required',
+            'steps' => 'required'
         ]);
 
         if ($request->hasFile('file')) {
@@ -51,7 +52,9 @@ class RecipeController extends Controller
                 'prep_time' => $request->prep_time,
                 'cook_time' => $request->cook_time,
                 'body' => $request->body,
-                "file_path" => $request->file->hashName()
+                "file_path" => $request->file->hashName(),
+                'ingredients' => $request->ingredients,
+                'steps' => $request->steps
             ]);
         }
 
@@ -65,7 +68,9 @@ class RecipeController extends Controller
             'title' => $request->title,
             'prep_time' => $request->prep_time,
             'cook_time' => $request->cook_time,
-            'body' => $request->body
+            'body' => $request->body,
+            'ingredients' => $request->ingredients,
+            'steps' => $request->steps
         ]);
         $recipes = Recipe::latest()->with(['user', 'likes'])->paginate(20);
         return view('recipes.index', [

@@ -73,9 +73,15 @@ img {
     font-size: 1.4rem;
     color: white;
 }
+/* UTIL */
 
+.importantInfo {
+    color: #ffe598;
+    font-size: 2rem;
+}
 /* FOOD CARD */
 .foodCardGrid {
+    max-width: 100vw;
     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -83,6 +89,7 @@ img {
 }
 @media only screen and (max-width: 420px) {
     .foodCardGrid {
+        max-width: 100vw;
         margin: 0;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
@@ -100,7 +107,31 @@ img {
     transition: 0.5s;
     background: black;
 }
+@media only screen and (max-width: 500px) {
+    .foodCard {
+        max-width: 200px;
+        min-height: 500px;
+    }
+}
 
+.buttonContainer {
+    display: flex;
+}
+
+.buttonContainer button {
+    color: inherit;
+    font-size: 2rem;
+    border: none;
+    background: none;
+}
+
+.buttonContainer button:hover {
+    cursor: pointer;
+}
+
+.foodLink {
+    color: inherit;
+}
 .foodCard:hover {
     transition: 0.25s;
     transform: scale(1.04);
@@ -112,6 +143,10 @@ img {
 .foodCardItem {
     margin: 1rem;
     z-index: 4;
+}
+
+.foodIngredientList {
+    padding-top: 1rem;
 }
 
 .food_card_image {
@@ -135,6 +170,13 @@ img {
     background: linear-gradient(0deg, #000000a6 30%, #96969644 100%);
 }
 #dashboard {
+    padding-top: 2rem;
+    min-height: 100vh;
+    min-width: 100%;
+    background: #383838;
+}
+
+#recipes {
     padding-top: 2rem;
     min-height: 100vh;
     min-width: 100%;

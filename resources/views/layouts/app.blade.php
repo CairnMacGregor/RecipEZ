@@ -18,7 +18,7 @@
 
         <ul class ="navRight navMenu">
            @auth
-            <li class ="nav-link"> <a href=""></a><i class="fas fa-user"></i>  {{auth()->user()->name}}</li>
+            <li class ="nav-link"> <a href="{{route('users.recipes', auth()-> user() -> username)}}"><i class="fas fa-user"></i>  {{auth()->user()->name}}</a></li>
             <form action="{{route('logout')}}" method ="post" >
                 @csrf
                 <button class ="nav-link nav-button" type = "submit"> <i class="fas fa-sign-out-alt"></i>Logout</button></form>

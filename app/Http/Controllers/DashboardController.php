@@ -28,9 +28,11 @@ class DashboardController extends Controller
             for ($i = 0; $i < $extraInfo; $i++) {
                 $arrayIn = Recipe::find(Auth::user()->favourites[$i]->recipe_id);
                 $outPut[] = $arrayIn;
+                // dd($outPut);
             }
             return view('dashboard', [
-                'userFavs' => $outPut,
+
+                'userFavs' => $outPut
 
             ]);
         } else {
