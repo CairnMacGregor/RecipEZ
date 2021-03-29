@@ -129,6 +129,10 @@ img {
     cursor: pointer;
 }
 
+button:focus {
+    outline: none !important;
+}
+
 .foodLink {
     color: inherit;
 }
@@ -181,6 +185,76 @@ img {
     min-height: 100vh;
     min-width: 100%;
     background: #383838;
+}
+/* SINGLE RECIPE */
+
+#recipeSingle {
+    padding-top: 2rem;
+    min-height: 100vh;
+    min-width: 100%;
+    background: #383838;
+}
+.singleInfo {
+    width: 100%;
+    padding-left: 5rem;
+}
+.singleMain {
+    width: 100%;
+    padding-left: 5rem;
+}
+
+.singleStep {
+    margin: 1rem 0;
+}
+
+.singleStep span {
+    color: #ffe598;
+}
+
+.singleIng {
+    margin: 1rem 0;
+}
+
+.singleIng span {
+    color: #ffe598;
+}
+.recipeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipeContainer h2,
+h3 {
+    color: #ffe598;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.recipeContainer p,
+li {
+    color: white;
+}
+
+.foodLinkSingle {
+    color: white;
+}
+
+.completed {
+    color: grey;
+    text-decoration: line-through;
+}
+
+.singleImg {
+    margin: 2.5rem;
+    width: calc(100% - 10rem);
+    height: 20%;
+    object-fit: cover;
+}
+
+.singleButtons {
+    margin-top: 2rem;
+    margin-left: 5rem;
 }
 /* UTILS */
 .noOutput {

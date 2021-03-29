@@ -38,6 +38,7 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 
 Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes');
+Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show');
 Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create');
 Route::post('/recipes', [RecipeController::class, 'store']);
 Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])->name('recipes.destroy');

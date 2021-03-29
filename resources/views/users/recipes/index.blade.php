@@ -9,7 +9,7 @@
        @if($recipes -> count())
            <div class ="foodCardGrid">
                @foreach($recipes as $recipe)
-                   <div class="foodCard">
+                   <div class="foodCard" onclick ="location.href ='{{route('recipes.show', $recipe)}}'">
                        <img src ="{{ url('storage/recipes/'.$recipe->file_path) }}" class = "food_card_image">
                            <div class = "imageOverlay">
                            <h2 class="foodTitle foodCardItem">{{$recipe -> title}}</h2>

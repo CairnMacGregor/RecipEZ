@@ -8,7 +8,7 @@
     <div class ="foodCardGrid">
 
         @foreach($userFavs as $userFav)
-        <div class="foodCard">
+        <div class="foodCard" onclick ="location.href ='{{route('recipes.show', $userFav)}}'">
            
                 <img src ="{{ url('storage/recipes/'.$userFav->file_path) }}" class = "food_card_image">
                 <div class = "imageOverlay">
